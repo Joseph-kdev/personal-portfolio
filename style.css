@@ -1,0 +1,146 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #c31432, #240b36);
+}
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    background-color: #09010F;
+    width: 100vw;
+    z-index: 8;
+}
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 1em;
+    padding-right: 2%;
+}
+.nav li {
+    list-style: none;
+}
+.nav a {
+    text-decoration: none;
+    color: white;
+}
+#welcome-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#welcome-section h1 {
+    margin-bottom: 0;
+}
+#welcome-section p {
+    column-gap: 0;
+    font-size: 1.3em;
+}
+#projects {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #09010fb9;
+    padding-top: 0.2em;
+    padding-bottom: 1.2em;
+    border-radius: 14px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    -ms-border-radius: 14px;
+    -o-border-radius: 14px;
+    color: white;
+}
+hr {
+    width: 90%;
+}
+#projects h3 {
+    padding-left: 5%;
+}
+.project-tile {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+#first {
+    background: url("./TributePage.png");
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 90%;
+    height: 16em;
+}
+#second {
+    background: url("./productPage.png");
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 90%;
+    height: 16em;
+}
+#third {
+    background: url("./SurveyForm.png");
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 90%;
+    height: 16em;
+}
+#projectList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2em;
+}
+.project-tile {
+    background-color: #09010F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 15em;
+    z-index: 0;
+}
+.project-tile :hover {
+    background-color: #09010fa4;
+}
+#contacts {
+    color: white;
+}
+#contactHeader {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#contactHeader h2 {
+    margin-top: 2em;
+    margin-bottom: 0;
+}
+#contactList {
+    display: flex;
+    justify-content: space-around;
+}
+#contactList a {
+    color: black;
+}
+#contactList a :hover {
+    color: white;
+    font-size: 1.5em;
+}
+@media (min-width : 768px) {
+    #projects h3 {
+        font-size: 1.5em;
+    }
+    #projectList{
+        padding-top: 1.8em;
+        padding-bottom: 1em;
+        padding-right: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        row-gap: 0;
+    }
+}
