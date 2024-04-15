@@ -260,15 +260,13 @@ body {
 /* Intro part */
 
 #intro-background {
-  background-image: url("https://media.giphy.com/media/HN7NmOvr9WLiCaNJXE/giphy.gif");
+  background-image: url("./img/fractal.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  color: var(--text);
 }
-
-
-
 
 #welcome-section {
     height: 100vh;
@@ -276,14 +274,143 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+    background-color: rgba(0, 0, 0, 0.767);
 }
 #welcome-section h1 {
     font-family: "Anta", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 2.5em;
+    animation: text-flicker-in-glow 4s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    -webkit-animation: text-flicker-in-glow 4s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
+
+@keyframes text-flicker-in-glow {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  10.1% {
+    opacity: 1;
+    text-shadow: none;
+  }
+  10.2% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  20% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  20.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+  }
+  20.6% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  30% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  30.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  30.5% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  30.6% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  45% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  45.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  55% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  55.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  57% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  57.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+  }
+  60% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+  }
+  60.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  65% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  65.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  75% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  75.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  77% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  77.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  85% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  85.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  86% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  86.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+}
+
 #welcome-section p {
     column-gap: 0;
     display: block;
@@ -294,6 +421,8 @@ body {
     font-family: "DM Serif Display", serif;
     font-weight: 400;
     font-size: 1.6em;
+    animation: text-flicker-in-glow 7s linear both;
+    -webkit-animation: text-flicker-in-glow 7s linear both;
 }
 
 #social-icons {
@@ -308,7 +437,7 @@ ion-icon {
     color: white;
     margin-left: 8px;
 }
- 
+
 /* about me section */
 #about-me {
     min-height: 100vh;
@@ -337,6 +466,25 @@ ion-icon {
 }
 .me-intro {
     margin: 2vh 2vw;
+    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+/* fade in animation */
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  50% {
+      -webkit-filter: blur(6px);
+      filter: blur(6px);
+      opacity: 0.5;
+}
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
 }
 .me-intro span {
     font-weight: 550;
@@ -354,13 +502,14 @@ ion-icon {
 }
 
 #about-me img {
-    width: 170px;
-    height: 170px;
+    width: 190px;
+    height: 190px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
+    opacity: 0.6;
 }
 
 #what-I-Do {
@@ -389,12 +538,27 @@ ion-icon {
     -o-border-radius: 50%;
     font-size: 50px;
 }
+.icons :hover{
+  animation: rotate-center 0.6s ease-in-out both;
+}
+/* let's rotate */
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
 
 #design, #development, #writing {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 2.5vh;
+    
 }
 #design h3, #development h3, #writing h3 { 
     margin-top: 2vh;
@@ -405,6 +569,7 @@ ion-icon {
 #design p, #development p, #writing p {
     margin: 3vh 3vw;
     line-height: 1.5;
+    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 #passions {
     display: flex;
@@ -415,6 +580,20 @@ ion-icon {
 #skills {
   padding-top: 5vh;
   color: var(--text);
+  animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: text-focus-in 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+@keyframes fade-in-fwd {
+  0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
 }
 
 #skills h2,hr, p {
@@ -430,7 +609,7 @@ ion-icon {
 .skillset {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin: 2vh 2vw;
+    margin: 2vh 1vw;
     text-align: center;
 }
 
@@ -442,6 +621,7 @@ ion-icon {
 .skillset ul li {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin-top: 13px;
     margin-bottom: 5px;
@@ -735,6 +915,8 @@ ion-icon {
   margin-left: 0;
   font-family: 'Poppins';
   font-size: 1.2em;
+  line-height: 1.3;
+  text-align: center;
 }
 #contactHeader h2, .socials {
   text-align: center;
@@ -748,6 +930,9 @@ ion-icon {
 .email {
   text-align: center;
   margin-top: 10px;
+}
+.email div :hover{
+  animation: rotate-center 0.6s ease-in-out both;
 }
 /* Large screen optimizations */
 

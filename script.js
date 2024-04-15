@@ -7,3 +7,4 @@ links.forEach(link => {
     menuIcon.checked = false; // Uncheck the checkbox
   });
 });
+
