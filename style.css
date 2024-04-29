@@ -260,11 +260,11 @@ body {
 /* Intro part */
 
 #intro-background {
-  background-image: url("./img/fractal.jpg");
+  /* background-image: url("./img/fractal.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   color: var(--text);
 }
 
@@ -466,25 +466,6 @@ ion-icon {
 }
 .me-intro {
     margin: 2vh 2vw;
-    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-}
-/* fade in animation */
-@keyframes text-focus-in {
-  0% {
-    -webkit-filter: blur(12px);
-            filter: blur(12px);
-    opacity: 0;
-  }
-  50% {
-      -webkit-filter: blur(6px);
-      filter: blur(6px);
-      opacity: 0.5;
-}
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
 }
 .me-intro span {
     font-weight: 550;
@@ -569,7 +550,6 @@ ion-icon {
 #design p, #development p, #writing p {
     margin: 3vh 3vw;
     line-height: 1.5;
-    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 #passions {
     display: flex;
@@ -580,20 +560,6 @@ ion-icon {
 #skills {
   padding-top: 5vh;
   color: var(--text);
-  animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-  -webkit-animation: text-focus-in 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-}
-@keyframes fade-in-fwd {
-  0% {
-    -webkit-transform: translateZ(-80px);
-            transform: translateZ(-80px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-    opacity: 1;
-  }
 }
 
 #skills h2,hr, p {
@@ -606,28 +572,30 @@ ion-icon {
   color: var(--text);
 }
 
-.skillset {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin: 2vh 1vw;
-    text-align: center;
-}
 
-.skillset ul {
- list-style-type: none;
- padding-left: 0;
- 
+.languages {
+  display: flex;
 }
-.skillset ul li {
+.languages div{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 13px;
-    margin-bottom: 5px;
+    margin: 0.8rem;
+}
+.frameworks {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+.frameworks div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 .skillset h4 {
-    margin: 1vh;
+    margin: 2vh;
     font-family: "Rubik";
     font-weight: 500;
 }
@@ -931,9 +899,7 @@ ion-icon {
   text-align: center;
   margin-top: 10px;
 }
-.email div :hover{
-  animation: rotate-center 0.6s ease-in-out both;
-}
+
 /* Large screen optimizations */
 
 @media (min-width : 768px) {
@@ -983,11 +949,14 @@ ion-icon {
     padding-left: 5%;
     padding-right: 5%;
   }
+  .languages {
+    justify-content: space-evenly;
+  }
   #blogs {
     margin-top: 70px;
   }
   #blogs h2 {
-    margin-left: 370px;
+    padding-left: 5%;
     margin-bottom: 40px;
   }
   .project-image {
