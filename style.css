@@ -720,6 +720,11 @@ p {
   color: var(--text);
 }
 
+.puppeteer-logo {
+  width: 60px;
+  margin-bottom: 6px;
+}
+
 /* new blog card */
 
 
@@ -952,14 +957,14 @@ p {
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 300px;
+  min-height: 320px;
   margin-top: 2vh;
   min-width: 340px;
 }
 
 .project-overlay {
   background-color: rgba(0, 0, 0, 0.8);
-  min-height: 300px;
+  min-height: 320px;
   padding-top: 35px;
   display: flex;
   flex-direction: column;
@@ -976,12 +981,15 @@ p {
 .project ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   padding-left: 15px;
   margin-bottom: 15px;
+  max-width: 320px;
 }
 
 .project ul li {
-  margin-right: 5px;
+  margin-right: 12px;
+  margin-bottom: 4px;
   font-family: 'Montserrat';
   font-weight: 600;
   font-size: 0.8em;
@@ -1151,6 +1159,8 @@ p {
     align-items: center;
     justify-content: space-evenly;
     color: var(--text);
+    padding-left: 4vw;
+    padding-right: 4vw;
   }
 
   .project-overlay {
@@ -1163,7 +1173,7 @@ p {
     position: absolute;
     margin-top: 50px;
     min-height: 90px;
-    width: 600px;
+    width: 680px;
     display: flex;
     align-items: center;
     padding: 0.25rem 1rem;
