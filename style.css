@@ -1033,12 +1033,18 @@ p {
 .project-icons a {
   margin-left: 5px;
 }
-
-#contacts {
+#contactHeader {
   padding: 5vh 2vw;
-  background-color: #f2f2f2;
+  color: var(--text);
+  background-color: rgba(0, 0, 0, 0.459);
+}
+#contacts {
+  background: url("https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdG80aGNzdGtoMjg0Yjhod3NjdDkybGxzcGpweXZuNHN6ZmFyajA1eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VDGOdvmp1bpc3PcCry/giphy.gif");
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
+  position: relative;
 }
 
 #contacts p {
@@ -1052,7 +1058,6 @@ p {
 #contactHeader h2,
 .socials {
   text-align: center;
-  color: rgba(0, 0, 0, 0.877);
 }
 
 .socials a {
