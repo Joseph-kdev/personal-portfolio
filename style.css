@@ -499,9 +499,10 @@ body {
   font-family: "DM Serif Display", serif;
   font-weight: 400;
   font-size: 1.6em;
-  animation: text-flicker-in-glow 7s linear both;
-  -webkit-animation: text-flicker-in-glow 7s linear both;
+  animation: text-flicker-in-glow 6s linear both;
+  -webkit-animation: text-flicker-in-glow 6s linear both;
 }
+
 
 #social-icons {
   margin-top: 5.5vh;
@@ -511,6 +512,11 @@ body {
 
 #social-icons a {
   text-decoration: none;
+  display: inline-block;
+  animation: text-flicker-in-glow 4s cubic-bezier(.215, .61, .355, 1);
+  -webkit-animation: text-flicker-in-glow 4s cubic-bezier(.215, .61, .355, 1);
+  animation-delay: calc(0.3s * var(--index));
+  animation-fill-mode: forwards;
 }
 
 ion-icon {
@@ -534,7 +540,7 @@ ion-icon {
   font-weight: 400;
   font-style: normal;
   font-variation-settings:
-    "wdth" 100;
+    "width" 100;
 }
 
 #about-me h3 {
@@ -545,8 +551,32 @@ ion-icon {
   margin-left: 1vw;
 }
 
+@keyframes fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+}
+}
+
 .me-intro {
   margin: 2vh 2vw;
+  opacity: 0;
+  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+}
+
+.me-intro.visible {
+    animation: fade-in 0.8s cubic-bezier(.215, .61, .355, 1);
+    -webkit-animation: fade-in 0.8s cubic-bezier(.215, .61, .355, 1);
+    animation-fill-mode: both;
+    animation-delay: 0.3s;
 }
 
 .me-intro span {
@@ -566,21 +596,77 @@ ion-icon {
   margin: 1vh 1vw;
 }
 
-#about-me img {
+@keyframes reveal-img {
+  to {
+    clip-path: inset(0);
+  }
+}
+
+@keyframes show-wrapper {
+  from {
+     box-shadow: 8px 8px 32px 4px rgba(3, 140, 140, 0);
+  }
+  to {
+    box-shadow: 8px 8px 32px 4px rgba(3, 140, 140, 0.93);
+  }
+}
+
+.profile-img-wrapper {
+    width: 190px;
+    height: 190px;
+    border-radius: 10px;
+    animation: show-wrapper 1s cubic-bezier(.19, 1, .22, 1) both;
+    -webkit-animation: show-wrapper 1s cubic-bezier(.19, 1, .22, 1) both;
+}
+
+.profile-img {
   width: 190px;
   height: 190px;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  opacity: 0.6;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  clip-path: inset(0 0 100% 0);
+}
+
+.profile-img.visible {
+  animation: reveal-img 0.5s cubic-bezier(.19, 1, .22, 1) ;
+  -webkit-animation: reveal-img 0.5s cubic-bezier(.19, 1, .22, 1) ;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
 }
 
 #what-I-Do {
   min-height: 100vh;
   padding-top: 7vh;
   background-color: rgba(255, 255, 255, 0.815);
+}
+
+.what-I-do-item {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transition: opacity 0.5s, transform 0.4s;
+  -webkit-transition: opacity 0.5s, transform 0.4s;
+  -moz-transition: opacity 0.5s, transform 0.4s;
+  -ms-transition: opacity 0.5s, transform 0.4s;
+  -o-transition: opacity 0.5s, transform 0.4s;
+  transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+  transition-delay: calc(0.1s * var(--iconIndex));
+}
+
+.what-I-do-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
 }
 
 #what-I-Do h2 {
@@ -598,6 +684,7 @@ ion-icon {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -607,7 +694,8 @@ ion-icon {
 }
 
 .icons :hover {
-  animation: rotate-center 0.6s ease-in-out both;
+  animation: rotate-center 0.6s cubic-bezier(.165, .84, .44, 1) both;
+  -webkit-animation: rotate-center 0.6s cubic-bezier(.165, .84, .44, 1) both;
 }
 
 /* let's rotate */
@@ -1093,9 +1181,13 @@ p {
     justify-content: space-evenly;
   }
 
-  #about-me img {
+  .profile-img-wrapper {
     width: 300px;
     height: 300px;
+  }
+  .profile-img {
+    width: 100%;
+    height: 100%;
   }
 
   .me-intro {

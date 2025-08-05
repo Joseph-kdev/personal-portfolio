@@ -43,21 +43,23 @@
             <h1>Joseph Muchai</h1>
             <p><span class="role" title="web">Full-Stack developer</span></p>
             <div id="social-icons">
-                <a href="https://www.linkedin.com/in/joseph-muchai-968688253/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/joseph-muchai-968688253/" style="--index:1" target="_blank" rel="noopener noreferrer">
                     <ion-icon name="logo-linkedin"></ion-icon>
                 </a>
-                <a href="https://github.com/Joseph-kdev" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/Joseph-kdev" target="_blank" style="--index:2" rel="noopener noreferrer">
                     <ion-icon name="logo-github"></ion-icon>
                 </a>
-                <a href="https://twitter.com/MuchaiJoseph_" target="_blank" rel="noopener noreferrer">
+                <a href="https://twitter.com/MuchaiJoseph_" target="_blank" style="--index:3" rel="noopener noreferrer">
                     <ion-icon name="logo-twitter"></ion-icon>
                 </a>
             </div>
         </section>
     </section>
     <section id="about-me">
-        <img src="./img/me.jpg" alt="" data-AOS="zoom-in-up" data-AOS-duration="2000">
-        <div class="me-intro" data-AOS="fade-up" data-AOS-duration="2000" data-AOS-easing="ease-in">
+        <div class="profile-img-wrapper">
+            <img src="./img/me.jpg" alt="" class="profile-img">
+        </div>
+        <div class="me-intro">
             <h3>Hello, I'm Joseph.</h3>
             <p>
                 <span>
@@ -87,7 +89,7 @@
     <section id="what-I-Do">
         <h2>What I do</h2>
         <div id="passions">
-            <div id="development" data-AOS="fade-up" data-AOS-duration="2000">
+            <div id="development" class="what-I-do-item" style="--iconIndex:1">
                 <div class="icons">
                     <i class="fa fa-code" aria-hidden="true"></i>
                 </div>
@@ -98,7 +100,7 @@
                     for the web.
                 </p>
             </div>
-            <div id="design" data-AOS="fade-up" data-AOS-duration="2000">
+            <div id="design" class="what-I-do-item" style="--iconIndex:2">
                 <div class="icons">
                     <i class="fa fa-paint-brush" aria-hidden="true"></i>
                 </div>
@@ -108,7 +110,7 @@
                     that are user friendly and intuitive.
                 </p>
             </div>
-            <div id="writing" data-AOS="fade-up" data-AOS-duration="2000">
+            <div id="writing" class="what-I-do-item" style="--iconIndex:3">
                 <div class="icons">
                     <i class="fa fa-keyboard" aria-hidden="true"></i>
                 </div>
