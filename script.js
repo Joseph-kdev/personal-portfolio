@@ -10,6 +10,8 @@ links.forEach((link) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const image = document.querySelector(".profile-img");
+  const projectDesc = document.querySelectorAll(".prj-desc");
+  const prjSkills = document.querySelectorAll(".prj-skills li");
   const observer = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
@@ -21,7 +23,22 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { threshold: 0.9 }
   );
+    const skillsObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }, 1000)
+        }
+      });
+    },
+    { threshold: 0.9 }
+  );
   observer.observe(image);
+  projectDesc.forEach(item => observer.observe(item));
+  prjSkills.forEach(item => skillsObserver.observe(item));
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -80,3 +97,14 @@ window.addEventListener("load", () => {
     });
   }, 300);
 });
+
+//project images
+const prjImage = document.querySelectorAll(".project-image img");
+
+prjImage.forEach((prj) => prj.addEventListener("mouseenter", () => {
+  prj.classList.add("persist-shadow");
+}))
+
+prjImage.forEach((prj) => prj.addEventListener("click", () => {
+  prj.classList.remove("persist-shadow");
+}))

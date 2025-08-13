@@ -318,7 +318,8 @@ body {
   font-style: normal;
   font-size: 2.5em;
   animation: text-flicker-in-glow 4s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-  -webkit-animation: text-flicker-in-glow 4s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  -webkit-animation: text-flicker-in-glow 4s
+    cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 @keyframes text-flicker-in-glow {
@@ -748,6 +749,7 @@ ion-icon {
 #skills {
   padding-top: 5vh;
   color: var(--text);
+  padding-bottom: 5vh;
 }
 
 #skills h2,
@@ -764,32 +766,6 @@ p {
   font-size: 28px;
   color: var(--text);
   text-align: center;
-}
-
-.languages {
-  display: flex;
-  justify-content: space-around;
-}
-
-.languages div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0.8rem;
-}
-
-.frameworks {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-}
-
-.frameworks div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2rem;
 }
 
 .skills-container {
@@ -984,16 +960,6 @@ p {
   .tab-buttons {
     width: 340px;
   }
-}
-
-.skillset h4 {
-  margin: 2vh;
-  font-family: "Rubik";
-  font-weight: 500;
-}
-
-.skillset svg {
-  margin-bottom: 6px;
 }
 
 #blogs {
@@ -1224,6 +1190,32 @@ p {
   }
 }
 
+@keyframes blur {
+  0% {
+    text-shadow: 0 0 100px #fff;
+    opacity: 0;
+  }
+  5% {
+    text-shadow: 0 0 90px #fff;
+  }
+  15% {
+    opacity: 1;
+  }
+  30% {
+    text-shadow: 0 0 0px #fff;
+  }
+  50% {
+    text-shadow: 0 0 100px #fff;
+  }
+  95% {
+    text-shadow: 0 0 50px #fff;
+  }
+  100% {
+    text-shadow: 0 0 0px #fff;
+    opacity: 1;
+  }
+}
+
 #projects {
   font-family: "Poppins", sans-serif;
   padding: 4vh 2vw;
@@ -1254,14 +1246,24 @@ p {
   color: var(--text);
 }
 
-.project h4 {
+.project-title {
   font-family: "DM serif";
   margin-left: 15px;
   font-size: 1.4em;
   margin-bottom: 15px;
 }
 
-.project ul {
+.prj-desc {
+  opacity: 0;
+}
+
+.prj-desc.visible {
+  animation: blur 2s cubic-bezier(.075, .82, .165, 1);;
+  -webkit-animation: blur 2s cubic-bezier(.075, .82, .165, 1);;
+  animation-fill-mode: both;
+}
+
+.prj-skills {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -1269,6 +1271,22 @@ p {
   margin-bottom: 15px;
   max-width: 320px;
 }
+
+.prj-skills li {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -moz-transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -ms-transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.prj-skills li.visible {
+    opacity: 1;
+  transform: translateY(0);
+}
+
 
 .project ul li {
   margin-right: 12px;
@@ -1316,6 +1334,15 @@ p {
 .project-icons a {
   margin-left: 5px;
 }
+
+.project-icons a:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
 #contactHeader {
   padding: 5vh 2vw;
   color: var(--text);
@@ -1443,7 +1470,17 @@ p {
   .project-image img {
     width: 400px;
     opacity: 1;
-  }
+    box-shadow: none;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -ms-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.project-image img.persist-shadow {
+  box-shadow: 8px 8px 32px 4px rgba(3, 140, 140, 0.93);
+}
 
   .project {
     background: none !important;
@@ -1470,6 +1507,7 @@ p {
     align-items: center;
     padding: 0.25rem 1rem;
     font-size: 0.8rem;
+    box-shadow: 8px 8px 32px 4px rgba(3, 140, 140, 0.93);
   }
 
   .project-overlay h4 {
