@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const meIntro = document.querySelector(".me-intro");
+  const meIntro = document.querySelectorAll(".me-intro-p");
   const whatItem = document.querySelectorAll(".what-I-do-item");
   const observer = new IntersectionObserver(
     (entries, observer) => {
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { threshold: 0.001 }
   );
-  observer.observe(meIntro);
+  meIntro.forEach(item => observer.observe(item))
   whatItem.forEach((item) => observer.observe(item));
 });
 

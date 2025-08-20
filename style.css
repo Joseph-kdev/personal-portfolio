@@ -569,6 +569,10 @@ ion-icon {
 
 .me-intro {
   margin: 2vh 2vw;
+}
+
+.me-intro-p {
+  --delay: 0.1s;
   opacity: 0;
   transform: translateY(100%);
   -webkit-transform: translateY(100%);
@@ -577,11 +581,11 @@ ion-icon {
   -o-transform: translateY(100%);
 }
 
-.me-intro.visible {
+.me-intro-p.visible {
   animation: fade-in 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-animation: fade-in 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
   animation-fill-mode: both;
-  animation-delay: 0.3s;
+  animation-delay: calc(var(--delay) * var(--introIndex));
 }
 
 .me-intro span {
@@ -1003,7 +1007,11 @@ p {
   &:hover {
     .photo {
       transform: scale(1.3) rotate(3deg);
-    }
+      -webkit-transform: scale(1.3) rotate(3deg);
+      -moz-transform: scale(1.3) rotate(3deg);
+      -ms-transform: scale(1.3) rotate(3deg);
+      -o-transform: scale(1.3) rotate(3deg);
+}
   }
 
   .meta {
@@ -1191,29 +1199,15 @@ p {
 }
 
 @keyframes blur {
-  0% {
-    text-shadow: 0 0 100px #fff;
+  from {
+    filter: blur(10px);
     opacity: 0;
-  }
-  5% {
-    text-shadow: 0 0 90px #fff;
-  }
-  15% {
-    opacity: 1;
-  }
-  30% {
-    text-shadow: 0 0 0px #fff;
-  }
-  50% {
-    text-shadow: 0 0 100px #fff;
-  }
-  95% {
-    text-shadow: 0 0 50px #fff;
-  }
-  100% {
-    text-shadow: 0 0 0px #fff;
-    opacity: 1;
-  }
+    -webkit-filter: blur(10px);
+} to {
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+  opacity: 1;
+}
 }
 
 #projects {
@@ -1315,17 +1309,18 @@ p {
   margin-right: 5px;
 }
 
-.more-prjs {
+.more-prjs, .more-blogs {
   margin-top: 4vh;
 }
 
-.more-prjs a {
+.more-prjs a, .more-blogs a {
   color: var(--accent);
 }
 
-.more-prjs a:hover {
+.more-prjs a:hover, .more-blogs a:hover {
   color: var(--secondary);
 }
+
 
 .project-image {
   display: none;
@@ -1461,6 +1456,17 @@ p {
   #blogs h2 {
     padding-left: 5%;
     margin-bottom: 40px;
+  }
+
+  .more-blogs {
+    text-align: center;
+  }
+
+  .more-blogs a {
+       text-decoration: none;
+       border: solid var(--secondary);
+       padding: 4px 8px;
+       box-shadow: 2px 4px 8px;
   }
 
   .project-image {
