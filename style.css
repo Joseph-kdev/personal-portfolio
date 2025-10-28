@@ -636,14 +636,7 @@ ion-icon {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  clip-path: inset(0 0 100% 0);
-}
-
-.profile-img.visible {
-  animation: reveal-img 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-  -webkit-animation: reveal-img 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-  animation-fill-mode: forwards;
-  animation-delay: 0.3s;
+  object-fit: cover;
 }
 
 #what-I-Do {
